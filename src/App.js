@@ -7,10 +7,9 @@ import Header from "./components/header/header";
 import { Button } from "primereact/button";
 
 export default class App extends Component {
- 
   render() {
     return (
-      <div className="container-fluid p-3 main">        
+      <div className="container-fluid p-3 main">
         <center>
           <Header />
           <br></br>
@@ -20,11 +19,13 @@ export default class App extends Component {
 
         <center>
           <div>
-            <br></br>           
+            <br></br>
             <Button
               className="p-button-raised p-button-rounded"
-              onClick={() => { window.location.reload()}}
-            >            
+              onClick={() => {
+                window.location.reload();
+              }}
+            >
               Refresh
             </Button>
           </div>

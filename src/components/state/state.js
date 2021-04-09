@@ -6,7 +6,7 @@ import "primeflex/primeflex.css";
 import "primereact/resources/themes/saga-blue/theme.css";
 import "primereact/resources/primereact.min.css";
 import { Dropdown } from "primereact/dropdown";
-import { Toast } from "primereact/toast";
+// import { Toast } from "primereact/toast";
 
 export default class state extends Component {
   state = {
@@ -74,19 +74,21 @@ export default class state extends Component {
   };
 
   render() {
-    const toast = useRef(null);
+    // const toast = useRef();
 
-    const showSuccess = () => {
-      toast.current.show({
-        severity: "success",
-        summary: "Success Message",
-        detail: "Message Content",
-        life: 3000,
-      });
-    };
+    // const showSuccess = () => {
+    //   toast.current.show({
+    //     severity: "success",
+    //     summary: "Success Message",
+    //     detail: "Message Content",
+    //     life: 3000,
+    //   });
+    // };
 
     return (
       <div>
+        {/* <Toast ref={toast} /> */}
+
         {console.log(this.state)}
 
         <div className="search_bar_div container">
@@ -97,7 +99,7 @@ export default class state extends Component {
             options={this.state.stateList}
             onChange={(e) => {
               this.setStateName(e);
-              showSuccess();
+              // showSuccess();
             }}
             optionLabel="state"
             filterBy="state"
