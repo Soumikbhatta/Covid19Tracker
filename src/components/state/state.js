@@ -1,6 +1,12 @@
-import React, { Component } from "react";
+/* eslint-disable no-unused-vars */
+import React, { Component, useRef } from "react";
 import axios from "axios";
 import Statedata from "../statedata/statedata";
+import "primeflex/primeflex.css";
+import "primereact/resources/themes/saga-blue/theme.css";
+import "primereact/resources/primereact.min.css";
+import { Dropdown } from "primereact/dropdown";
+import { Toast } from "primereact/toast";
 
 export default class state extends Component {
   state = {
@@ -58,7 +64,7 @@ export default class state extends Component {
   };
 
   setStateName = async (e) => {
-    await this.setState({ stateNm: e.target.value });
+    await this.setState({ stateNm: e.target.value.state });
 
     if (this.state.stateNm === "Select State") {
       await this.setState({ stateData: [] });
@@ -68,18 +74,35 @@ export default class state extends Component {
   };
 
   render() {
+    const toast = useRef(null);
+
+    const showSuccess = () => {
+      toast.current.show({
+        severity: "success",
+        summary: "Success Message",
+        detail: "Message Content",
+        life: 3000,
+      });
+    };
+
     return (
       <div>
+        {console.log(this.state)}
+
         <div className="search_bar_div container">
           <h5>Select State From List</h5>
-          <select className="box mb-3" onChange={(e) => this.setStateName(e)}>
-            <option>Select State</option>
-            {this.state.stateList.map((list) => (
-              <option key={list.state} value={list.state}>
-                {list.state}
-              </option>
-            ))}
-          </select>
+          <Dropdown
+            style={{ width: 400 }}
+            value={this.state.stateNm}
+            options={this.state.stateList}
+            onChange={(e) => {
+              this.setStateName(e);
+              showSuccess();
+            }}
+            optionLabel="state"
+            filterBy="state"
+            placeholder="Select a State"
+          />
         </div>
 
         <Statedata stateData={this.state.stateData} />
