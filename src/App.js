@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import India from "./components/india/india";
 import State from "./components/state/state";
 import Header from "./components/header/header";
-import { Button } from "primereact/button";
+
 
 export default class App extends Component {
   render() {
@@ -20,14 +20,7 @@ export default class App extends Component {
         <center>
           <div>
             <br></br>
-            <Button
-              className="p-button-raised p-button-rounded"
-              onClick={() => {
-                window.location.reload();
-              }}
-            >
-              Refresh
-            </Button>
+            
           </div>
         </center>
 

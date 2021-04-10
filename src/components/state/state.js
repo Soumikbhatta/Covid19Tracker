@@ -6,6 +6,7 @@ import "primeflex/primeflex.css";
 import "primereact/resources/themes/saga-blue/theme.css";
 import "primereact/resources/primereact.min.css";
 import { Dropdown } from "primereact/dropdown";
+import { Button } from "primereact/button";
 // import { Toast } from "primereact/toast";
 
 export default class state extends Component {
@@ -94,7 +95,7 @@ export default class state extends Component {
         <div className="search_bar_div container">
           <h5>Select State From List</h5>
           <Dropdown
-            style={{ width: 400 }}
+            
             value={this.state.stateNm}
             options={this.state.stateList}
             onChange={(e) => {
@@ -105,6 +106,17 @@ export default class state extends Component {
             filterBy="state"
             placeholder="Select a State"
           />
+
+          <Button
+            
+
+            className="p-button-raised "
+            onClick={() => {
+              window.location.reload();
+            }}
+          >
+            Refresh
+          </Button>
         </div>
 
         <Statedata stateData={this.state.stateData} />
