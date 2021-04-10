@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Col, Row } from "react-bootstrap";
+import { Card } from "primereact/card";
 
 import axios from "axios";
 
@@ -31,42 +33,35 @@ export default class india extends Component {
               <h3 className="text-dark mb-0">COVID-19 STATUS IN INDIA</h3>
             </div>
 
-            <div className="col mr-2">
-              <div className="text-dark font-weight-bold text-xs mb-3">
-                <span>Confirmed Case</span>
-              </div>
-              <div className="text-dark font-weight-bold h5 mb-0">
-                <span>{this.state.india.confirmed}</span>
-              </div>
-            </div>
+            <Row className="p-3">
+                <Col className="text-text col m-1 items confirmed">
+                  <Card
+                    title="Confirmed Cases"
+                    style={{ width: "15rem", marginBottom: "2em" }}
+                  >
+                    {this.state.india.confirmed}
+                  </Card>
+                </Col>
 
+                <Col className="text-text col m-1 items confirmed">
+                  <Card
+                    title="Total Deaths"
+                    style={{ width: "15rem", marginBottom: "2em" }}
+                  >
+                    {this.state.india.deaths}
+                  </Card>
 
-            <br></br>
-            <br></br>
+                </Col>               
 
-
-            <div className="col mr-2">
-              <div className="text-dark font-weight-bold text-xs mb-3">
-                <span>Total Deaths</span>
-              </div>
-              <div className="text-dark font-weight-bold h5 mb-0">
-                <span>{this.state.india.deaths}</span>
-              </div>
-            </div>
-
-
-            <br></br>
-            <br></br>
-
-            
-            <div className="col mr-2">
-              <div className="text-dark font-weight-bold text-xs mb-3">
-                <span>Recovered</span>
-              </div>
-              <div className="text-dark font-weight-bold h5 mb-0">
-                <span>{this.state.india.recovered}</span>
-              </div>
-            </div>
+                <Col className="text-text col m-1 items today-deaths">
+                  <Card
+                    title="Recovered"
+                    style={{ width: "15rem", marginBottom: "2em" }}
+                  >
+                    {this.state.india.recovered}
+                  </Card>
+                </Col>
+              </Row>
 
           </div>
         )}

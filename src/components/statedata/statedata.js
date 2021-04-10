@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Col, Row } from "react-bootstrap";
 import { Card } from "primereact/card";
-import { Toast } from 'primereact/toast';
+// import { Toast } from 'primereact/toast';
 
 import District from "../districtwise/districtwise";
 
