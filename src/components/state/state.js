@@ -95,7 +95,6 @@ export default class state extends Component {
         <div className="search_bar_div container">
           <h5>Select State From List</h5>
           <Dropdown
-            
             value={this.state.stateNm}
             options={this.state.stateList}
             onChange={(e) => {
@@ -104,12 +103,14 @@ export default class state extends Component {
             }}
             optionLabel="state"
             filterBy="state"
+            filter
+            showClear
             placeholder="Select a State"
           />
 
-          <Button
-            
+          
 
+          <Button
             className="p-button-raised "
             onClick={() => {
               window.location.reload();
