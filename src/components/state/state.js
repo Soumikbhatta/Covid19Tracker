@@ -7,6 +7,7 @@ import "primereact/resources/themes/saga-blue/theme.css";
 import "primereact/resources/primereact.min.css";
 import { Dropdown } from "primereact/dropdown";
 import { Button } from "primereact/button";
+
 // import { Toast } from "primereact/toast";
 
 export default class state extends Component {
@@ -94,6 +95,7 @@ export default class state extends Component {
 
         <div className="search_bar_div container">
           <h5>Select State From List</h5>
+          
           <Dropdown
             value={this.state.stateNm}
             options={this.state.stateList}
@@ -103,7 +105,6 @@ export default class state extends Component {
             }}
             optionLabel="state"
             filterBy="state"
-            filter
             showClear
             placeholder="Select a State"
           />
